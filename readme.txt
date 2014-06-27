@@ -123,15 +123,12 @@ Yes, through the addition of one or more of the add-on integrations, you can qui
 
 == Screenshots ==
 
-1. Download products overview
-2. Download configuration
-3. Download configuration details
-4. Download configuration with variable prices
-5. Payment history
-6. Discount codes
-7. Earnings and sales reports
-8. Add to cart / purchase button
-9. Checkout screen
+1. Archive Page Display with Listing Widgets
+2. Admin view of Property listing type
+3. Custom fields configured for a Property Listing type
+4. User Profile options for author box
+5. Search Widget adaps to child theme style 
+6. Home open shortcode and Multi Author widget
 
 == Changelog ==
 = 1.1: June 27, 2014 =
