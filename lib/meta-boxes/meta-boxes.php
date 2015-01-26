@@ -110,6 +110,7 @@ function epl_meta_box_init() {
 			'priority'	=>	'default',
 			'groups'	=>	array(
 				array(
+					'id'		=>	'property_heading',
 					'columns'	=>	'1',
 					'label'		=>	'',
 					'fields'	=>	array(
@@ -123,9 +124,17 @@ function epl_meta_box_init() {
 				),
 			
 				array(
+					'id'		=>	'listing_agents',
 					'columns'	=>	'1',
 					'label'		=>	__('Listing Agent(s)', 'epl'),
 					'fields'	=>	array(
+						array(
+							'name'		=>	'property_office_id',
+							'label'		=>	__('Office ID', 'epl'),
+							'type'		=>	'text',
+							'maxlength'	=>	'50'
+						),
+						
 						array(
 							'name'		=>	'property_agent',
 							'label'		=>	__('Listing Agent', 'epl'),
@@ -138,11 +147,14 @@ function epl_meta_box_init() {
 							'label'		=>	__('Second Listing Agent', 'epl'),
 							'type'		=>	'text',
 							'maxlength'	=>	'40'
-						)
+						),
+						
+						
 					)
 				),
 			
 				array(
+					'id'		=>	'listing_type',
 					'columns'	=>	'2',
 					'label'		=>	__('Listing Type', 'epl'),
 					'fields'	=>	array(
@@ -177,13 +189,6 @@ function epl_meta_box_init() {
 							'include'	=>	array('rural')
 						),
 						
-						array(
-							'name'		=>	'property_office_id',
-							'label'		=>	__('Office ID', 'epl'),
-							'type'		=>	'text',
-							'maxlength'	=>	'50'
-						),
-					
 						array(
 							'name'		=>	'property_unique_id',
 							'label'		=>	__('Unique ID', 'epl'),
@@ -233,6 +238,7 @@ function epl_meta_box_init() {
 				),
 			
 				array(
+					'id'		=>	'display_details',
 					'columns'	=>	'2',
 					'label'		=>	__('Display Details', 'epl'),
 					'fields'	=>	array(
@@ -248,9 +254,9 @@ function epl_meta_box_init() {
 					
 						array(
 							'name'		=>	'property_inspection_times',
-							'label'		=>	__('Inspection Times', 'epl'),
-							'type'		=>	'text',
-							'maxlength'	=>	'150'
+							'label'		=>	__('Inspection Times ( one per line )', 'epl'),
+							'type'		=>	'textarea',
+							'maxlength'	=>	'500'
 						)
 					
 					)
@@ -266,6 +272,7 @@ function epl_meta_box_init() {
 			'priority'	=>	'default',
 			'groups'	=>	array(
 				array(
+					'id'		=>	'house_features',
 					'columns'	=>	'2',
 					'label'		=>	__('House Features', 'epl'),
 					'fields'	=>	array(
@@ -353,6 +360,7 @@ function epl_meta_box_init() {
 				),
 			
 				array(
+					'id'		=>	'land_details',
 					'columns'	=>	'2',
 					'label'		=>	__('Land Details', 'epl'),
 					'fields'	=>	array(
@@ -406,6 +414,7 @@ function epl_meta_box_init() {
 			'priority'	=>	'default',
 			'groups'	=>	array(
 				array(
+					'id'		=>	'internal',
 					'columns'	=>	'2',
 					'label'		=>	__('Internal', 'epl'),
 					'fields'	=>	array(
@@ -551,6 +560,7 @@ function epl_meta_box_init() {
 				),
 			
 				array(
+					'id'		=>	'external',
 					'columns'	=>	'2',
 					'label'		=>	__('External', 'epl'),
 					'fields'	=>	array(
@@ -617,6 +627,7 @@ function epl_meta_box_init() {
 					)
 				),
 				array(
+					'id'		=>	'heating_cooling',
 					'columns'	=>	'2',
 					'label'		=>	__('Heating & Cooling', 'epl'),
 					'fields'	=>	array(
@@ -723,6 +734,7 @@ function epl_meta_box_init() {
 			'priority'	=>	'default',
 			'groups'	=>	array(
 				array(
+					'id'		=>	'land_details',
 					'columns'	=>	'1',
 					'label'		=>	'',
 					'fields'	=>	array(
@@ -787,6 +799,7 @@ function epl_meta_box_init() {
 			'groups'	=>	array(
 				apply_filters('epl_listing_meta_address_block', 
 					array(
+						'id'		=>	'address_block',
 						'columns'	=>	'1',
 						'label'		=>	'',
 						'fields'	=>	array(
@@ -799,7 +812,23 @@ function epl_meta_box_init() {
 									'no'	=>	__('No', 'epl')
 								),
 							),
-					
+							
+							array(
+								'name'		=>	'property_address_lot_number',
+								'label'		=>	__('Lot', 'epl'),
+								'type'		=>	'text',
+								'maxlength'	=>	'40',
+								'include'	=>	array('land', 'commercial_land')
+							),
+							
+							array(
+								'name'		=>	'property_address_sub_number',
+								'label'		=>	__('Unit', 'epl'),
+								'type'		=>	'text',
+								'maxlength'	=>	'40',
+								'exclude'	=>	array('land', 'commercial_land')
+							),
+							
 							array(
 								'name'		=>	'property_address_street_number',
 								'label'		=>	__('Street Number', 'epl'),
@@ -852,7 +881,7 @@ function epl_meta_box_init() {
 								'type'		=>	'text',
 								'maxlength'	=>	'40'
 							),
-					
+							
 							array(
 								'name'		=>	'property_address_coordinates',
 								'label'		=>	__('Coordinates', 'epl'),
@@ -874,6 +903,7 @@ function epl_meta_box_init() {
 			'priority'	=>	'core',
 			'groups'	=>	array(
 				array(
+					'id'		=>	'pricing',
 					'columns'	=>	'1',
 					'label'		=>	'',
 					'fields'	=>	array(
@@ -893,8 +923,8 @@ function epl_meta_box_init() {
 					
 						array(
 							'name'		=>	'property_auction',
-							'label'		=>	__('Auction Date / Details', 'epl'),
-							'type'		=>	'text',
+							'label'		=>	__('Auction Date', 'epl'),
+							'type'		=>	'auction-date',
 							'maxlength'	=>	'100'
 						),
 					
@@ -932,6 +962,7 @@ function epl_meta_box_init() {
 				),
 			
 				array(
+					'id'		=>	'sale_details',
 					'columns'	=>	'1',
 					'label'		=>	__('Sale Details', 'epl'),
 					'fields'	=>	array(
@@ -945,7 +976,7 @@ function epl_meta_box_init() {
 						array(
 							'name'		=>	'property_sold_date',
 							'label'		=>	__('Sale Date', 'epl'),
-							'type'		=>	'text',
+							'type'		=>	'sold-date',
 							'maxlength'	=>	'100'
 						),
 					
@@ -971,6 +1002,7 @@ function epl_meta_box_init() {
 			'priority'	=>	'core',
 			'groups'	=>	array(
 				array(
+					'id'		=>	'rental_pricing',
 					'columns'	=>	'1',
 					'label'		=>	'',
 					'fields'	=>	array(
@@ -1045,6 +1077,7 @@ function epl_meta_box_init() {
 			'priority'	=>	'default',
 			'groups'	=>	array(
 				array(
+					'id'		=>	'rural_features',
 					'columns'	=>	'1',
 					'label'		=>	'',
 					'fields'	=>	array(
@@ -1116,6 +1149,7 @@ function epl_meta_box_init() {
 			'priority'	=>	'default',
 			'groups'	=>	array(
 				array(
+					'id'		=>	'commercial_leasing',
 					'columns'	=>	'2',
 					'label'		=>	'',
 					'fields'	=>	array(
@@ -1157,6 +1191,7 @@ function epl_meta_box_init() {
 				),
 			
 				array(
+					'id'		=>	'tenant_n_outgoings',
 					'columns'	=>	'2',
 					'label'		=>	'',
 					'fields'	=>	array(
@@ -1205,6 +1240,7 @@ function epl_meta_box_init() {
 			'priority'	=>	'default',
 			'groups'	=>	array(
 				array(
+					'id'		=>	'commerial_features',
 					'columns'	=>	'1',
 					'label'		=>	'',
 					'fields'	=>	array(
@@ -1280,6 +1316,7 @@ function epl_meta_box_init() {
 			'priority'	=>	'default',
 			'groups'	=>	array(
 				array(
+					'id'		=>	'business_categories',
 					'columns'	=>	'1',
 					'label'		=>	'',
 					'fields'	=>	array(
@@ -1358,6 +1395,7 @@ function epl_meta_box_init() {
 			'priority'	=>	'default',
 			'groups'	=>	array(
 				array(
+					'id'		=>	'filen_n_links',
 					'columns'	=>	'1',
 					'label'		=>	'',
 					'fields'	=>	array(
@@ -1419,10 +1457,24 @@ function epl_meta_box_init() {
 			)
 		)
 	);
-	
+	if(!empty($epl_meta_boxes)) {
+		foreach($epl_meta_boxes as &$epl_meta_box) {
+			if(!empty($epl_meta_box['groups'])) {
+				foreach($epl_meta_box['groups'] as &$group) {
+					$group = apply_filters('epl_meta_groups_'.$group['id'], $group);
+					if(!empty($group['fields'])) {
+						foreach($group['fields'] as &$fieldvalue) {
+							$fieldvalue = apply_filters('epl_meta_'.$fieldvalue['name'], $fieldvalue);
+						}
+					}
+					
+				}
+			}
+		}
+	}
+
 	$epl_meta_boxes = apply_filters('epl_listing_meta_boxes', $epl_meta_boxes);
-	
-	
+
 	/**
 	 * Add meta boxes to the post-edit page
 	 *
@@ -1449,6 +1501,7 @@ function epl_meta_box_init() {
 	 */
 	function epl_meta_box_inner_custom_box($post, $args) {
 		$groups = $args['args']['groups'];
+		$groups = array_filter($groups);
 		if(!empty($groups)) {
 			wp_nonce_field( 'epl_inner_custom_box', 'epl_inner_custom_box_nonce' );
 			foreach($groups as $group) { ?>
@@ -1463,6 +1516,7 @@ function epl_meta_box_init() {
 						<tbody>
 							<?php
 								$fields = $group['fields'];
+								$fields = array_filter($fields);
 								if(!empty($fields)) {
 									foreach($fields as $field) {
 										if(isset($field['exclude']) && !empty($field['exclude'])) {
@@ -1635,6 +1689,14 @@ function epl_meta_box_init() {
 															}
 															echo '<input type="text" name="'.$field['name'].'" id="'.$field['name'].'" value="'.stripslashes($val).'" class="validate[custom[onlyNumber]]" '.$atts.' />';
 															break;
+															
+														case 'auction-date':
+															echo '<input type="text" name="'.$field['name'].'" id="'.$field['name'].'" value="'.stripslashes($val).'" '.$atts.' />';
+															break;
+															
+														case 'sold-date':
+															echo '<input type="text" name="'.$field['name'].'" id="'.$field['name'].'" value="'.stripslashes($val).'" '.$atts.' />';
+															break;
 														
 														case 'url':
 															echo '<input type="text" name="'.$field['name'].'" id="'.$field['name'].'" value="'.stripslashes($val).'" class="validate[custom[url]]" />';
@@ -1748,8 +1810,26 @@ function epl_meta_box_init() {
 												if(!isset($_POST[ $field['name'] ])) {
 													continue;
 												}
+											} else if( $field['type'] == 'auction-date' && $_POST[ $field['name'] ] != '') {
+												$epl_date = $_POST[ $field['name'] ];
+												if(strpos($epl_date, 'T') !== FALSE){
+													$epl_date = date("Y-m-d\TH:i",strtotime($epl_date));
+												} else {
+													$epl_date = DateTime::createFromFormat('Y-m-d-H:i:s', $epl_date);
+													$epl_date = $epl_date->format('Y-m-d\TH:i');
+												}
+												$_POST[ $field['name'] ] = $epl_date;
+											} else if( $field['type'] == 'sold-date' && $_POST[ $field['name'] ] != '') {
+												$epl_date = $_POST[ $field['name'] ];
+												if(strpos($epl_date, 'T') !== FALSE){
+													$epl_date = date("Y-m-d\TH:i",strtotime($epl_date));
+												} else {
+													$epl_date = DateTime::createFromFormat('Y-m-d-H:i:s', $epl_date);
+													$epl_date = $epl_date->format('Y-m-d');
+												}
+												$_POST[ $field['name'] ] = $epl_date;
 											}
-										
+											
 											update_post_meta( $post_ID, $field['name'], $_POST[ $field['name'] ] );
 										}
 									}
@@ -1800,10 +1880,18 @@ function epl_meta_box_init() {
 				$('.epl-geocoder-button').click(function() {
 					var $obj = $(this);
 					$obj.parent().addClass('disabled');
+					if($obj.closest('form').find('#property_address_sub_number').length) {
+						listingUnit = $obj.closest('form').find('#property_address_sub_number').val();
+					} else if($obj.closest('form').find('#property_address_lot_number').length) {
+						listingUnit = $obj.closest('form').find('#property_address_lot_number').val();
+					} else {
+						listingUnit = '';
+					}
 					$.ajax({
 						type: "POST",
 						url: ajaxurl,
 						data: {
+							'property_address_sub_number'	:	listingUnit,
 							'property_address_street_number':	$obj.closest('form').find('#property_address_street_number').val(),
 							'property_address_street'		:	$obj.closest('form').find('#property_address_street').val(),
 							'property_address_suburb'		:	$obj.closest('form').find('#property_address_suburb').val(),
@@ -1865,9 +1953,13 @@ function epl_meta_box_init() {
 	 * @since 1.0
 	 */
 	function epl_get_geocoordinates() {
-		$address = $_POST['property_address_street_number'] . ' ' . $_POST['property_address_street'] . ' ' . $_POST['property_address_suburb'] . ' ' . $_POST['property_address_state'] . ' ' . $_POST['property_address_postal_code'];
+		$address = '';
+		if(trim($_POST['property_address_sub_number']) != '') {
+			$address .= $_POST['property_address_sub_number'].'/';
+		}
+		$address .= $_POST['property_address_street_number'] . ' ' . $_POST['property_address_street'] . ' ' . $_POST['property_address_suburb'] . ' ' . $_POST['property_address_state'] . ' ' . $_POST['property_address_postal_code'];
 		$address = urlencode(strtolower(trim($address)));
-		$geourl = "http://maps.google.com/maps/api/geocode/json?address=". $address ."&sensor=false";
+		$geourl = "http://maps.google.com/maps/api/geocode/json?address=". urlencode($address) ."&sensor=false";
 		$response = epl_remote_url_get($geourl);
 		if(!empty($response)) {
 			$geocoordinates = $response[0]->geometry->location->lat . ',' . $response[0]->geometry->location->lng;
