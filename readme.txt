@@ -28,8 +28,9 @@ Easy Property Listing is one of the most dynamic and feature rich Real Estate pl
 * Developers save time because it's pre-configured to support every country, in any market.
 * Fast. Flexible. Forward-thinking solution for real estate agents using WordPress.
 
-Features:
-* Author Box and Widget: Easy to customise, multiple agents, tabbed and extendable. Supports video, bio, social media links and much more.
+= Features: =
+
+* Author Box and Widget: Easy to customise, multiple agents, tabbed and extendible. Supports video, bio, social media links and much more.
 * Listing Widget to easily add properties anywhere to your theme. Dozens of options with random, ordered and offset and no code.
 * Search Widget: Supports tabs, location, land, price, address and more. It's all here, search everything. Its super-fast.
 * Extend with Advanced Mapping extension that handles hundreds of listings, dozens of options added with a simple shortcode.
@@ -39,10 +40,10 @@ Features:
 * Buttons for multiple floor plans, and multiple external links.
 * Support for Under Offer and no price listings, you name it, it works.
 * Currency support for non-dollar currencies
-
 * Extensible with many [add-ons](http://easypropertylistings.com.au/extensions/?utm_source=readme&utm_medium=description_tab&utm_content=extensions_link&utm_campaign=epl_extensions)
 
-Developer Features:
+= Developer Features: =
+
 * Over 50 custom meta fields per listing type. Everything is pre-configured saving hundreds of hours. Want more, add more all extendible.
 * Build better real estate websites faster with advanced extensions saving you even more time. Flexible and forward-thinking.
 * Separate post types for each listing type; property, rental, land, rural, business, commercial, commercial land.
@@ -57,20 +58,16 @@ More information at [Easy Property Listings.com.au](http://easypropertylistings.
 
 **Follow this plugin on [GitHub](https://github.com/easypropertylistings/Easy-Property-Listings)**
 
-**Advanced Mapping**
+**Advanced Mapping** [Advanced Map](http://easypropertylistings.com.au/extensions/advanced-mapping/) Create a beautiful map showcasing your listings with a powerful shortcode.
 
-[Advanced Map](http://easypropertylistings.com.au/extensions/advanced-mapping/) Create a beautiful map showcasing your listings with a powerful shortcode.
-
-**Listing Alerts**
-
-[Listing Alerts](http://easypropertylistings.com.au/extensions/advanced-mapping/) Schedule email alerts to subscribers with HTML email support and customisable messages.
+**Listing Alerts** [Listing Alerts](http://easypropertylistings.com.au/extensions/advanced-mapping/) Schedule email alerts to subscribers with HTML email support and customisable messages.
 
 
-**Link listings with other types of content**
+= Link listings with other types of content =
 
 With add-ons for [Listing Templates](http://easypropertylistings.com.au/extensions/listing-templates/), [Suburb/City Profiles](http://easypropertylistings.com.au/extensions/suburb-profiles/), [Testimonials](http://easypropertylistings.com.au/extensions/testimonial-manager/), and [Staff Directory](http://easypropertylistings.com.au/extensions/staff-directory/), [Awards](http://easypropertylistings.com.au/extensions/awards/), [Business Directory](http://easypropertylistings.com.au/extensions/business-directory/), [FeedSync REAXML](http://easypropertylistings.com.au/extensions/feedsync/), and more, Easy Property Listings can enhance your listings by dynamically linking content and you offering opportunities to build a deep real estate website.
 
-**Languages**
+= Languages =
 
 Easy Property Listings needs help for translation:
 
