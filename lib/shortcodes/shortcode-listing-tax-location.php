@@ -1,12 +1,12 @@
 <?php
 /**
- * SHORTCODE :: Listing [listing]
+ * SHORTCODE :: Listing Location Taxonomy [listing_feature]
  *
  * @package     EPL
- * @subpackage  Shortcode
+ * @subpackage  Shortcode/map
  * @copyright   Copyright (c) 2014, Merv Barrett
  * @license     http://opensource.org/licenses/gpl-2.0.php GNU Public License
- * @since       1.0
+ * @since       1.1.2
  */
 
 // Exit if accessed directly
@@ -14,14 +14,14 @@ if ( ! defined( 'ABSPATH' ) ) exit;
 
 // Only load on front
 if( is_admin() ) {
-	return; 
+	return;
 }
 /**
- * This shortcode allows for you to specify the property type(s) using 
- * [listing post_type="property,rental" status="current,sold,leased" template="default"] option. You can also 
- * limit the number of entries that display. using  [listing limit="5"]
+ * This shortcode allows for you to specify feature property type(s) using 
+ * [listing_location post_type="property" location="sorrento" location_id="6" status="current,sold,leased" template="default"] option. You can also 
+ * limit the number of entries that display. using  [listing_location limit="5"]
  */
-function epl_shortcode_listing_callback( $atts ) {
+function epl_shortcode_listing_tax_location_callback( $atts ) {
 	$property_types = epl_get_active_post_types();
 	if(!empty($property_types)) {
 		 $property_types = array_keys($property_types);
@@ -30,14 +30,19 @@ function epl_shortcode_listing_callback( $atts ) {
 	extract( shortcode_atts( array(
 		'post_type' 		=>	$property_types, //Post Type
 		'status'		=>	array('current' , 'sold' , 'leased' ),
+		'location'		=>	'',
+		'location_id'		=>	'',
 		'limit'			=>	'10', // Number of maximum posts to show
 		'template'		=>	false, // Template can be set to "slim" for home open style template
-		'location'		=>	'', // Location slug. Should be a name like sorrento
 		'tools_top'		=>	'off', // Tools before the loop like Sorter and Grid on or off
 		'tools_bottom'		=>	'off', // Tools after the loop like pagination on or off
 		'sortby'		=>	'', // Options: price, date : Default date
 		'sort_order'		=>	'DESC'
 	), $atts ) );
+	
+	if(empty($post_type)) {
+		return;
+	}
 	
 	$sort_options = array(
 		'price'			=>	'property_price',
@@ -58,9 +63,22 @@ function epl_shortcode_listing_callback( $atts ) {
 			$location = array_map('trim', $location);
 			
 			$args['tax_query'][] = array(
-				'taxonomy' => 'location',
-				'field' => 'slug',
-				'terms' => $location
+				'taxonomy'	=> 'location',
+				'field' 	=> 'slug',
+				'terms' 	=> $location
+			);
+		}
+	}
+	
+	if(!empty($location_id) ) {
+		if( !is_array( $location_id ) ) {
+			$location_id = explode(",", $location_id);
+			$location_id = array_map('trim', $location_id);
+			
+			$args['tax_query'][] = array(
+				'taxonomy'	=> 'location',
+				'field'		=> 'id',
+				'terms' 	=> $location_id
 			);
 		}
 	}
@@ -77,7 +95,7 @@ function epl_shortcode_listing_callback( $atts ) {
 			);
 		}
 	}
-
+	
 	if( isset( $_GET['sortby'] ) ) {
 		$orderby = sanitize_text_field( trim($_GET['sortby']) );
 		if($orderby == 'high') {
@@ -97,11 +115,11 @@ function epl_shortcode_listing_callback( $atts ) {
 		}
 		
 	}
-
+	
 	$query_open = new WP_Query( $args );
 	if ( $query_open->have_posts() ) { ?>
 		<div class="loop epl-shortcode">
-			<div class="loop-content epl-shortcode-listing <?php echo epl_template_class( $template ); ?>">
+			<div class="loop-content epl-shortcode-listing-location <?php echo epl_template_class( $template ); ?>">
 				<?php
 					if ( $tools_top == 'on' ) {
 						do_action( 'epl_property_loop_start' );
@@ -123,11 +141,12 @@ function epl_shortcode_listing_callback( $atts ) {
 					if ( $tools_bottom == 'on' ) {
 						do_action( 'epl_property_loop_end' );
 					}
+
 				?>
 			</div>
 			<div class="loop-footer">
 				<!-- Previous/Next page navigation -->
-				<div class="loop-utility clearfix">
+				<div class="loop-utility epl-clearfix">
 					<div class="alignleft"><?php previous_posts_link( __( '&laquo; Previous Page', 'epl' ), $query_open->max_num_pages ); ?></div>
 					<div class="alignright"><?php next_posts_link( __( 'Next Page &raquo;', 'epl' ), $query_open->max_num_pages ); ?></div>
 				</div>
@@ -140,4 +159,4 @@ function epl_shortcode_listing_callback( $atts ) {
 	wp_reset_postdata();
 	return ob_get_clean();
 }
-add_shortcode( 'listing', 'epl_shortcode_listing_callback' );
+add_shortcode( 'listing_location', 'epl_shortcode_listing_tax_location_callback' );
