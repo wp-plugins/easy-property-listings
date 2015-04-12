@@ -11,7 +11,7 @@ Stable Tag: 2.1.1
 
 License: GNU Version 2 or Any Later Version
 
-Fast. Flexible. Forward-thinking solution for real estate agents using WordPress. Built for scale and lead generation and works with any WordPress theme.
+Fast. Flexible. Forward-thinking solution for real estate agents using WordPress. Built for scale and lead generation and works with any theme.
 
 == Description ==
 
@@ -142,6 +142,12 @@ Yes, through the addition of one or more of the add-on integrations, you can qui
 6. Home open shortcode and Multi Author widget
 
 == Changelog ==
+
+= 2.1.2 April 11, 2015 =
+
+* Fix: Improved Responsive CSS for grid style.
+* Fix: Twenty Fifteen, Twenty Fourteen, Twenty Thirteen, Twenty Twelve CSS styles for better display.
+* New: Added CSS class theme name output to archive and single templates.
 
 = 2.1.1 April 10, 2015 =
 
