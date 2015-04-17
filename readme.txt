@@ -143,6 +143,17 @@ Yes, through the addition of one or more of the add-on integrations, you can qui
 
 == Changelog ==
 
+= 2.1.3 April 17, 2015 =
+
+* Fix: Author box upgrated to allow for custom tabs.
+* Fix: Author box upgrated to allow for better staff directory integration with authorbox and widget.
+* Fix: Added CSS class for author archive pages.
+* Fix: Improved CSS classes for author box with better responsive support.
+* Fix: Added additional filters for author contact information.
+* Fix: Added secondary global author function for simpler integration for extensions like the Staff Directory.
+* Fix: Changes to author tempaltes and restored author position variable.
+* Fix: Further improved max and min graph values when in listing admin.
+
 = 2.1.2 April 11, 2015 =
 
 * Fix: Improved Responsive CSS for grid style.
