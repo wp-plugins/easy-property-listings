@@ -7,7 +7,7 @@ Tags: real estate, property, listings, rental, commercial, business, rural, land
 Requires at least: 3.3
 Tested up to: 4.2.2
 
-Stable Tag: 2.1.7
+Stable Tag: 2.1.8
 
 License: GNU Version 2 or Any Later Version
 
