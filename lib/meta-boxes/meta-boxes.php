@@ -292,7 +292,7 @@ function epl_meta_box_init() {
 							'name'		=>	'property_bathrooms',
 							'label'		=>	__('Bathrooms', 'epl'),
 							'type'		=>	'decimal',
-							'maxlength'	=>	'3'
+							'maxlength'	=>	'4'
 						),
 						
 						array(
@@ -909,7 +909,16 @@ function epl_meta_box_init() {
 								'type'		=>	'text',
 								'geocoder'	=>	'true',
 								'maxlength'	=>	'40'
+							),
+							array(
+								'name'		=>	'property_address_hide_map',
+								'label'		=>	__('', 'epl'),
+								'type'		=>	'checkbox_single',
+								'opts'		=>	array(
+									'yes'	=>	__('Hide Map', 'epl'),
+								)
 							)
+
 						)
 					)
 				)
