@@ -1,4 +1,4 @@
-=== Easy Property Listings ===
+﻿=== Easy Property Listings ===
 Author URI: http://www.realestateconnected.com.au
 Plugin URI: http://easypropertylistings.com.au
 Contributors: mervb1
@@ -180,6 +180,11 @@ Yes, through the addition of one or more of the add-on integrations, you can qui
 6. Home open shortcode and Multi Author widget
 
 == Changelog ==
+
+= 2.1.9 May 27, 2015 =
+
+* Fix: Fixed paging issues in listing widget.
+* Fix: Fix shortcodes when using multiple listing post types.
 
 = 2.1.8 May 16, 2015 =
 
