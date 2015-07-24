@@ -190,6 +190,11 @@ Yes, through the addition of one or more of the add-on integrations, you can qui
 
 == Changelog ==
 
+= 2.2.1 July 24, 2015 =
+
+* Tweak: Set padding for search tabs for better display on some themes.
+* Fix: Search function fix checking for empty option when using custom filters.
+
 = 2.2 July 24, 2015 =
 
 * New: Search shortcode and widget rebuilt to enable adding additional fields through filters and hooks.
