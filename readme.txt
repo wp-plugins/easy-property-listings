@@ -190,6 +190,11 @@ Yes, through the addition of one or more of the add-on integrations, you can qui
 
 == Changelog ==
 
+= 2.2.3 July 27, 2015 =
+
+* Tweak: Adjusted new sorter function to work on lower than PHP version 5.3.
+* Tweak: Moved old template functions to theme compatibility, will be removed in future version.
+
 = 2.2.2 July 25, 2015 =
 
 * Tweak: CSS tweak for image size to retain proportion on certain themes.
