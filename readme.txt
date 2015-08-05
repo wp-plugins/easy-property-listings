@@ -5,7 +5,7 @@ Contributors: mervb1
 Donate link: http://easypropertylistings.com.au/support-the-site/
 Tags: real estate, property, listings, rental, commercial, business, rural, land, residential, property listings, property management, realtor, broker, australia, wp-property, wp property, wp rentals, wp-realestate, wp real estate, multisite, property, Merv Barrett, real estate connected
 Requires at least: 3.3
-Tested up to: 4.2.3
+Tested up to: 4.2.4
 
 Stable Tag: 2.2.3
 
@@ -189,6 +189,15 @@ Yes, through the addition of one or more of the add-on integrations, you can qui
 6. Home open shortcode and Multi Author widget
 
 == Changelog ==
+
+= 2.2.4 August 05, 2015 =
+
+* Tweak: Improvements to Commercial/Commercial Land/Business pricing when set to Lease type to display free form price text.
+* Tweak: Bar graph in dashboard will no longer cover address if set to low.
+* Tweak: Added sticker CSS styling for single listing.
+* Fix: Search Widget/Shortcode display house category value instead of key.
+* Fix: Search Widget/Shortcode Property ID correctly searches numeric listing ID.
+* Fix: Search Widget/Shortcode excluded non searchable fields from land, commercial, commercial land and business post types.
 
 = 2.2.3 July 27, 2015 =
 
